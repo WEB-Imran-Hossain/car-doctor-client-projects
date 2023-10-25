@@ -1,4 +1,5 @@
 import About from "../AboutPage/About";
+import Services from "../ServicesPage/Services";
 import Banner from "./Banner";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <About></About>
+            <Services></Services>
         </div>
     );
 };

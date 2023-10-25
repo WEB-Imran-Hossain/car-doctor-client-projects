@@ -17,7 +17,7 @@ const Header = () => {
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52 text-lg font-semibold">
                         {menu}
@@ -32,12 +32,15 @@ const Header = () => {
                     {menu}
                 </ul>
             </div>
-            <div className="gap-3 text-xl">
-                <HiOutlineShoppingBag></HiOutlineShoppingBag>
-                <HiOutlineSearch></HiOutlineSearch>
-            </div>
+            
             <div className="navbar-end">
-                <button className="btn bg-inherit border-[#FF3811]  hover:bg-[#FF3811] hover:border-none hover:text-white text-lg font-semibold rounded-md">Appointment</button>
+            <div className="text-2xl flex items-center">
+                <HiOutlineShoppingBag className="mr-3"></HiOutlineShoppingBag>
+                <HiOutlineSearch className="mr-3"></HiOutlineSearch>
+            </div>
+                <div>
+                <button className="btn bg-inherit border-[#FF3811] hover:border-[#FF3811] hover:bg-[#FF3811]  hover:text-white text-lg font-semibold rounded-md capitalize ">Appointment</button>
+                </div>
             </div>
         </div>
     );
