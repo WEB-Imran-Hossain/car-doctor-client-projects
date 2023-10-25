@@ -11,9 +11,9 @@ const ServiceCard = ({ service }) => {
                 <h2 className="text-2xl font-bold text-[#444]">{title}</h2>
             </div>
             <div className="flex items-center justify-between">
-                    <p className="text-xl font-semibold text-[#FF3811]">Price: ${price}</p>
-                    <AiOutlineArrowRight className="text-2xl text-[#FF3811]"></AiOutlineArrowRight>
-                </div>
+                <p className="text-xl font-semibold text-[#FF3811]">Price: ${price}</p>
+                <AiOutlineArrowRight className="text-2xl text-[#FF3811]"></AiOutlineArrowRight>
+            </div>
         </div>
     );
 };

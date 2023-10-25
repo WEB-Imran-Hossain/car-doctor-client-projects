@@ -16,16 +16,20 @@ const Header = () => {
         <div className="navbar bg-base-100 h-24">
             <div className="navbar-start">
                 <div className="dropdown">
+                    <div>
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52 text-lg font-semibold">
                         {menu}
                     </ul>
+                    </div>
                 </div>
+                <div className="">
                 <Link to="/" className="text-xl">
-                    <img className='w-20' src="https://i.ibb.co/b6gm9NZ/logo.png" alt="" />
+                    <img className='w-20 ml-24 md:ml-64 lg:ml-0' src="https://i.ibb.co/b6gm9NZ/logo.png" alt="" />
                 </Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-lg font-semibold">
@@ -39,7 +43,7 @@ const Header = () => {
                 <HiOutlineSearch className="mr-3"></HiOutlineSearch>
             </div>
                 <div>
-                <button className="btn bg-inherit border-[#FF3811] hover:border-[#FF3811] hover:bg-[#FF3811]  hover:text-white text-lg font-semibold rounded-md capitalize ">Appointment</button>
+                <button className="btn bg-inherit border-[#FF3811] hover:border-[#FF3811] hover:bg-[#FF3811]  hover:text-white text-lg font-semibold rounded-md capitalize hidden lg:block ">Appointment</button>
                 </div>
             </div>
         </div>

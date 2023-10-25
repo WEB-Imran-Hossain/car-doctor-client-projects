@@ -25,12 +25,15 @@ const Services = () => {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {
-                    services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
-                }
+                    {
+                        services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                    }
+                </div>
+                <div className="w-4/5 mx-auto mt-12">
+                <button className="btn hover:bg-transparent text-white bg-[#FF3811] border-[#FF3811] hover:border hover:text-[#FF3811] text-lg font-semibold rounded-md normal-case ">More Services</button>
+                    </div>
             </div>
-            </div>
-            
+
         </div>
     );
 };

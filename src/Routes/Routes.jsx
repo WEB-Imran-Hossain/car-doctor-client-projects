@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 import Main from "../Layout/Main";
-import NotFound from "../Pages/NotFound";
+import NotFound from "../Pages/SharePage/NotFound";
 import Home from "../Pages/HomePage/Home";
 import About from "../Pages/AboutPage/About";
 import Services from "../Pages/ServicesPage/Services";
