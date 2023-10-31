@@ -16,6 +16,9 @@ const ServiceCard = ({ service }) => {
                 <Link to={`/checkout/${_id}`}>
                     <AiOutlineArrowRight className="text-2xl text-[#FF3811]"></AiOutlineArrowRight>
                 </Link>
+                {/* <Link to={`/book/${_id}`}>
+                <AiOutlineArrowRight className="text-2xl text-[#FF3811]"></AiOutlineArrowRight>
+                </Link> */}
             </div>
         </div>
     );
