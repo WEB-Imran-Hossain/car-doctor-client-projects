@@ -11,36 +11,49 @@ const OrderDetails = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, []);
 
+    const handleDelete = id => {
+        const proceed = confirm('Are you sure want to delete')
+        if (proceed) {
+            fetch(`http://localhost:5000/orders/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        const remaining = orders.filter(order => order._id !== id)
+                        setOrders(remaining);
+                       
+                    }
+                })
+        }
+    }
 
     return (
         <div>
             <h2 className="text-5xl">Your Orders: {orders.length}</h2>
+
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                        <tr className="flex items-center justify-around space-x-28">
+                            <th>Delete</th>
+                            <th>Picture</th>
+                            <th>Client Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                       {
-                        orders.map(order=> <OrderDetailsRow key={order._id} order={order}></OrderDetailsRow>)
-                       }
-                      
-                    </tbody>
-                   
+                        {
+                            orders.map(order => <OrderDetailsRow key={order._id} order={order} handleDelete={handleDelete}></OrderDetailsRow>)
+                        }
 
+                    </tbody>
                 </table>
             </div>
         </div>

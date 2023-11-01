@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const CheckOut = () => {
     const service = useLoaderData();
     const { title, img, price, _id } = service;
+    const { user } = useContext(AuthContext);
 
     const handleCheckOut = event => {
         event.preventDefault();
@@ -12,14 +14,14 @@ const CheckOut = () => {
         const fname = form.fname.value
         const lname = form.lname.value
         const phone = form.phone.value
-        const email = form.email.value
+        const email = user?.email
         const message = form.message.value
         const order = {
             fname,
             lname,
             phone,
             email,
-            message, 
+            message,
             img
         }
         console.log(order);
@@ -34,14 +36,14 @@ const CheckOut = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
                         title: 'Order Sucessfully',
                         showConfirmButton: false,
                         timer: 1500
-                      }) 
+                    })
                 }
             })
     }
@@ -74,7 +76,7 @@ const CheckOut = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' defaultValue={user?.email} placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control col-span-2">
                             <label className="label">
