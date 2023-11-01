@@ -19,7 +19,8 @@ const CheckOut = () => {
             lname,
             phone,
             email,
-            message
+            message, 
+            img
         }
         console.log(order);
 
@@ -79,7 +80,7 @@ const CheckOut = () => {
                             <label className="label">
                                 <span className="label-text">Message</span>
                             </label>
-                            <textarea type="text" name='message' placeholder="Your Message" className="input input-bordered h-32" required />
+                            <textarea type="text" name='message' placeholder="Your Message" className="input input-bordered h-32 pt-5" rows="10" cols="20" required />
                         </div>
                     </div>
                     <div className="form-control mt-6">

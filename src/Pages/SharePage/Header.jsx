@@ -20,7 +20,10 @@ const Header = () => {
             <li><Link to="/contact" className="hover:bg-inherit">Contact</Link></li>
             {
                 user?.email ?
-                    <li><button onClick={handleLogOut}>Log Out</button></li>
+                    <>
+                        <li><Link to="/orders" className="hover:bg-inherit">My Order</Link></li>
+                        <li><button onClick={handleLogOut}>Log Out</button></li>
+                    </>
                     :
                     <li><Link to="/login" className="hover:bg-inherit">Log In</Link></li>
             }
