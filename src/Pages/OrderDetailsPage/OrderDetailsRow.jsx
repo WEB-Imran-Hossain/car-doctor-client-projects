@@ -1,9 +1,9 @@
 import Swal from "sweetalert2";
 
-const OrderDetailsRow = ({ order, handleDelete }) => {
-    const { _id, fname, email, phone, img } = order;
+const OrderDetailsRow = ({ order, handleDelete, handleOrderConfirm }) => {
+    const { _id, fname, email, phone, img, status } = order;
 
-   
+
     return (
         <div>
             {/* row 1 */}
@@ -26,7 +26,10 @@ const OrderDetailsRow = ({ order, handleDelete }) => {
                 <td>{email}</td>
                 <td>{phone}</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    {
+                        status==='confirm' ?  <span> confirmed</span>:
+                        <button onClick={() => handleOrderConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
+                    }
                 </th>
             </tr>
         </div>

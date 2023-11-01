@@ -11,7 +11,7 @@ const OrderDetails = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, []);
+    }, [url]);
 
     const handleDelete = id => {
         const proceed = confirm('Are you sure want to delete')
@@ -50,7 +50,7 @@ const OrderDetails = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map(order => <OrderDetailsRow key={order._id} order={order} handleDelete={handleDelete}></OrderDetailsRow>)
+                            orders.map(order => <OrderDetailsRow key={order._id} order={order} handleDelete={handleDelete} ></OrderDetailsRow>)
                         }
 
                     </tbody>
