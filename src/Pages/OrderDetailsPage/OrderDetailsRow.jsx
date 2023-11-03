@@ -27,8 +27,8 @@ const OrderDetailsRow = ({ order, handleDelete, handleOrderConfirm }) => {
                 <td>{phone}</td>
                 <th>
                     {
-                        status==='confirm' ?  <span> confirmed</span>:
-                        <button onClick={() => handleOrderConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
+                        status === 'confirm' ? <span> confirmed</span> :
+                            <button onClick={() => handleOrderConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
                     }
                 </th>
             </tr>
